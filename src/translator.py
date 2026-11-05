@@ -33,7 +33,9 @@ class PigLatinTranslator:
             (self.phrase.lower().endswith("i")) or (self.phrase.lower().endswith("o")) or
             (self.phrase.lower().endswith("u"))):
                 return self.phrase + "yay"
-
-            return self.phrase + "nay"
+            else:
+                if self.phrase.lower().endswith("y"):
+                    return self.phrase + "nay"
+            return self.phrase + "ay"
 
         pass
