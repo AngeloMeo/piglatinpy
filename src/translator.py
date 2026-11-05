@@ -36,5 +36,5 @@ class PigLatinTranslator:
             return self.phrase + "ay"
         else:
             if start_letter not in "aeiou":
-                return self.phrase[:0] + self.phrase[1:] + self.phrase[0] + "ay"
+                return self.phrase[1:] + self.phrase[0] + "ay"
         pass
