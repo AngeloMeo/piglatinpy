@@ -23,4 +23,17 @@ class PigLatinTranslator:
         Returns the Pig Latin translation of the phrase.
         :return: the translation.
         """
-        return "nil"
+        if self.phrase == "":
+            return "nil"
+        if ((self.phrase.lower().startswith("a")) or (self.phrase.lower().startswith("e")) or
+                (self.phrase.lower().startswith("i")) or (self.phrase.lower().startswith("o")) or
+        (self.phrase.lower().startswith("u"))):
+
+            if ((self.phrase.lower().endswith("a")) or (self.phrase.lower().endswith("e")) or
+            (self.phrase.lower().endswith("i")) or (self.phrase.lower().endswith("o")) or
+            (self.phrase.lower().endswith("u"))):
+                return self.phrase + "yay"
+
+            return self.phrase + "nay"
+
+        pass
