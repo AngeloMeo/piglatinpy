@@ -1,6 +1,16 @@
 from src.error import PigLatinError
 
 
+def _indexOfFirstVowel(phrase) -> int:
+    found = False
+    i = 0
+    while not found and i < len(phrase):
+        if phrase[i] in "aeiou":
+            found = True
+        else:
+            i += 1
+    return i
+
 class PigLatinTranslator:
 
     def __init__(self, phrase: str):
@@ -38,14 +48,7 @@ class PigLatinTranslator:
             return self.phrase + "ay"
         else:
             if start_letter not in "aeiou":
-                found = False
-                i = 0
-                while not found and i < len(self.phrase):
-                    if self.phrase[i] in "aeiou":
-                        found = True
-                    else:
-                        i+=1
-
+                i = _indexOfFirstVowel(self.phrase)
                 return self.phrase[i:] + self.phrase[0:i] + "ay"
 
 
