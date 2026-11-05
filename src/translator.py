@@ -25,16 +25,14 @@ class PigLatinTranslator:
         """
         if self.phrase == "":
             return "nil"
-        if ((self.phrase.lower().startswith("a")) or (self.phrase.lower().startswith("e")) or
-                (self.phrase.lower().startswith("i")) or (self.phrase.lower().startswith("o")) or
-        (self.phrase.lower().startswith("u"))):
+        start_letter = self.phrase[0].lower()
+        ending_letter = self.phrase[-1].lower()
+        if start_letter in "aeiou":
 
-            if ((self.phrase.lower().endswith("a")) or (self.phrase.lower().endswith("e")) or
-            (self.phrase.lower().endswith("i")) or (self.phrase.lower().endswith("o")) or
-            (self.phrase.lower().endswith("u"))):
+            if ending_letter in "aeiou":
                 return self.phrase + "yay"
             else:
-                if self.phrase.lower().endswith("y"):
+                if ending_letter == "y":
                     return self.phrase + "nay"
             return self.phrase + "ay"
 
