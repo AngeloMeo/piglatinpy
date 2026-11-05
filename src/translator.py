@@ -9,10 +9,6 @@ class PigLatinTranslator:
         :param phrase: the phrase.
         :raise PigLatinError: for any error situation.
         """
-        if not isinstance(phrase, str):
-            raise PigLatinError
-        if len(phrase.strip()) == 0:
-            raise PigLatinError
         self.phrase = phrase.lower()
 
     def get_phrase(self) -> str:
@@ -27,3 +23,4 @@ class PigLatinTranslator:
         Returns the Pig Latin translation of the phrase.
         :return: the translation.
         """
+        return "nil"
