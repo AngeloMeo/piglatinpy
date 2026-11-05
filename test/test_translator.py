@@ -25,6 +25,10 @@ class TestPigLatinTranslator(TestCase):
         translator = PigLatinTranslator("apple")
         self.assertEqual("appleyay", translator.translate())
 
-    def test_translate_word_ending_with_vowel_ending_with_consonant(self):
+    def test_translate_word_starting_with_vowel_ending_with_consonant(self):
         translator = PigLatinTranslator("ask")
         self.assertEqual("askay", translator.translate())
+
+    def test_translate_word_starting_with_consonant(self):
+        translator = PigLatinTranslator("hello")
+        self.assertEqual("ellohay", translator.translate())

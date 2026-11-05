@@ -28,12 +28,13 @@ class PigLatinTranslator:
         start_letter = self.phrase[0].lower()
         ending_letter = self.phrase[-1].lower()
         if start_letter in "aeiou":
-
             if ending_letter in "aeiou":
                 return self.phrase + "yay"
             else:
                 if ending_letter == "y":
                     return self.phrase + "nay"
             return self.phrase + "ay"
-
+        else:
+            if start_letter not in "aeiou":
+                return self.phrase[:0] + self.phrase[1:] + self.phrase[0] + "ay"
         pass
