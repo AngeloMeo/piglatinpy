@@ -49,6 +49,7 @@ class PigLatinTranslator:
         else:
             if start_letter not in "aeiou":
                 i = _indexOfFirstVowel(self.phrase)
+
                 return self.phrase[i:] + self.phrase[0:i] + "ay"
 
 
